@@ -42,7 +42,10 @@ cachemodule = {
   hydrateCache: function (callback) {
     fs.readFile("./cache/cache.txt", "utf8", function (err, data) {
       if (err) {
-        return console.log(err);
+        //console.log("hydrate error" + err);
+        if (callback) {
+          callback();
+        }
       }else {
         if (data) {
           var entries = data.split('\n');
