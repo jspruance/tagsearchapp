@@ -40,10 +40,7 @@ loadTags(inputtags, function (err, tags) {
             tags = noncachedtags;
             // check if tags array is empty (ie., all tags are already cached)
             if (tags.length === 0) {
-
               // write output from cached tags
-              console.log("ALL ITEMS EXIST IN CACHE")
-
               // sort data
               var sortedOutput = sortoutput(cachedtags);
               // print final answer to console
@@ -52,8 +49,6 @@ loadTags(inputtags, function (err, tags) {
               }
 
             } else {
-
-              console.log("ALL ITEMS DO NOT EXIST IN CACHE" + " tags arry length= " + tags.length)
               // if an array of tags is returned, call the tagSearch module for further processing
               tagSearch(tags, function (err, data) {
                 if (err) {
