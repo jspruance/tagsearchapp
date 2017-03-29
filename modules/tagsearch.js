@@ -63,7 +63,7 @@ var fs = require('fs');
           func.apply(this, [prop, obj[prop]]);
         }
         if (obj[prop] !== null && typeof(obj[prop])=="object") {
-            //going one step down in the object tree!!
+            // one level deeper
             parsejson(obj[prop],func);
         }
       }
